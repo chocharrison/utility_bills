@@ -1,0 +1,120 @@
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error
+from tslearn.clustering import TimeSeriesKMeans
+from tslearn.preprocessing import TimeSeriesScalerMinMax
+from sklearn.preprocessing import MinMaxScaler
+import matplotlib.pyplot as plt
+
+
+# Load Data
+data = pd.read_csv('synthetic_data.csv')
+
+# Feature Engineering
+def feature_engineering(data):
+    # Calculate moving averages
+    data['moving_avg_3'] = data[[f'PrevMonConsumption_{i}' for i in range(1, 4)]].mean(axis=1)
+    data['moving_avg_6'] = data[[f'PrevMonConsumption_{i}' for i in range(1, 7)]].mean(axis=1)
+
+    # Calculate trend (slope)
+    x = np.arange(1, 12).reshape(-1, 1)
+    y_cols = [f'PrevMonConsumption_{i}' for i in range(1, 12)]
+    slopes = np.apply_along_axis(
+        lambda y: LinearRegression().fit(x, y).coef_[0],
+        axis=1,
+        arr=data[y_cols].values
+    )
+    data['trend_slope'] = slopes
+
+    # Calculate lag differences
+    for i in range(1, 11):
+        data[f'lag_diff_{i}'] = data[f'PrevMonConsumption_{i}'] - data[f'PrevMonConsumption_{i+1}']
+
+    return data
+
+
+# Normalize Time Series for Clustering
+def normalize_time_series(data, cols, scaler_range=(0, 1)):
+    scaler = TimeSeriesScalerMinMax(value_range=scaler_range)
+    scaled_data = scaler.fit_transform(data[cols].values)
+    return scaled_data
+
+
+# Time Series Clustering
+def perform_clustering(time_series_data, n_clusters=10):
+    kmeans = TimeSeriesKMeans(n_clusters=n_clusters, metric="dtw", random_state=42)
+    labels = kmeans.fit_predict(time_series_data)
+    return kmeans, labels
+
+
+# Plot Normalized Time Series and Cluster Centroids
+def plot_time_series(data, cluster_centroids, time_series_cols):
+    plt.figure(figsize=(12, 8))
+
+    # Normalize data for plotting
+    scaler = MinMaxScaler()
+    normalized_data = scaler.fit_transform(data[time_series_cols])
+
+    # Plot individual time series
+    for ts in normalized_data:
+        plt.plot(range(1, len(time_series_cols) + 1), ts, color="gray", alpha=0.2, label='_nolegend_')
+
+    # Plot cluster centroids
+    for idx, centroid in enumerate(cluster_centroids):
+        plt.plot(range(1, centroid.shape[0] + 1), centroid.flatten(), linewidth=2.5, label=f"Cluster {idx} Centroid")
+
+    plt.xlabel("Month")
+    plt.ylabel("Normalized Consumption")
+    plt.title("Normalized Time Series and Cluster Centroids")
+    plt.legend()
+    plt.grid()
+    plt.show()
+
+
+# Main Execution
+data = feature_engineering(data)
+
+# Time Series Columns
+time_series_cols = [f'PrevMonConsumption_{i}' for i in range(1, 12)]
+scaled_time_series = normalize_time_series(data, time_series_cols)
+
+# Clustering
+n_clusters = 10
+kmeans, cluster_labels = perform_clustering(scaled_time_series, n_clusters)
+data['cluster_label'] = cluster_labels
+
+# Regression Features
+features = time_series_cols + ['moving_avg_3', 'moving_avg_6', 'trend_slope'] + [f'lag_diff_{i}' for i in range(1, 11)] + ['cluster_label']
+X = data[features]
+y = data['ConsumptionValue']
+
+# Train-Test Split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Model Training
+model = RandomForestRegressor(random_state=42)
+model.fit(X_train, y_train)
+
+# Predictions and Residuals
+data['predicted_consumption'] = model.predict(X)
+data['residual'] = data['ConsumptionValue'] - data['predicted_consumption']
+
+# Outlier Detection
+threshold = 2 * data['residual'].std()
+data['is_outlier'] = data['residual'].abs() > threshold
+
+# Save Results
+outliers = data[['BillNumber', 'ConsumptionValue', 'predicted_consumption', 'residual', 'is_outlier', 'cluster_label']]
+outliers.to_csv('outliers_with_clusters.csv', index=False)
+
+# Model Evaluation
+y_pred = model.predict(X_test)
+mae = mean_absolute_error(y_test, y_pred)
+print(f"Mean Absolute Error: {mae:.2f}")
+print("Outliers with clusters saved to 'outliers_with_clusters.csv'.")
+
+# Plot Results
+plot_time_series(data, kmeans.cluster_centers_, time_series_cols)

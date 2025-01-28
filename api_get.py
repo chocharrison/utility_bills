@@ -26,15 +26,15 @@ def upload_file():
         file.save(filepath)
 
         # Process the file (example: convert to uppercase and save as a new file)
-        with open(filepath, 'r') as f:
-            content = f.read()
+        #with open(filepath, 'r') as f:
+        #    content = f.read()
 
-        processed_content = content.upper()  # Example processing
+        #processed_content = content.upper()  # Example processing
         output_filename = 'processed_' + file.filename
         output_path = os.path.join(app.config['UPLOAD_FOLDER'], output_filename)
         
-        with open(output_path, 'w') as f:
-            f.write(processed_content)
+        #with open(output_path, 'w') as f:
+        #   f.write(processed_content)
         
         # Return the result
         return jsonify({
