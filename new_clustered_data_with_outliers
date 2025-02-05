@@ -8,7 +8,7 @@ from sklearn.metrics import mean_absolute_error
 from tslearn.clustering import TimeSeriesKMeans
 from tslearn.preprocessing import TimeSeriesScalerMinMax
 from sklearn.preprocessing import MinMaxScaler
-import matplotlib.pyplot as plt
+from scipy.spatial.distance import cdist
 
 # Load Data
 data = pd.read_csv('synthetic_data.csv')
@@ -47,6 +47,25 @@ def perform_clustering(time_series_data, n_clusters=3):
     labels = kmeans.fit_predict(time_series_data)
     return kmeans, labels
 
+def merge_small_clusters(data, cluster_labels, min_cluster_size=5):
+    unique_clusters, cluster_counts = np.unique(cluster_labels, return_counts=True)
+    small_clusters = unique_clusters[cluster_counts < min_cluster_size]
+    
+    if len(small_clusters) == 0:
+        return cluster_labels
+    
+    # Calculate distances between cluster centroids
+    centroids = kmeans.cluster_centers_
+    distances = cdist(centroids, centroids)
+    
+    # Merge small clusters into the nearest larger cluster
+    for small_cluster in small_clusters:
+        # Find the nearest larger cluster
+        nearest_cluster = np.argmin([distances[small_cluster, i] if cluster_counts[i] >= min_cluster_size else np.inf for i in range(len(unique_clusters))])
+        cluster_labels[cluster_labels == small_cluster] = nearest_cluster
+    
+    return cluster_labels
+
 def plot_time_series_by_cluster_single_canvas(data, cluster_centroids, time_series_cols, n_clusters):
     # Normalize data for plotting
     scaler = MinMaxScaler()
@@ -83,6 +102,40 @@ def plot_time_series_by_cluster_single_canvas(data, cluster_centroids, time_seri
     # Adjust layout for better spacing
     plt.tight_layout()
     plt.show()
+
+from sklearn.decomposition import PCA
+
+def plot_clusters_in_2d(data, cluster_labels, n_clusters, random_state=42):
+    """
+    Plot clusters in 2D using PCA for dimensionality reduction.
+    """
+    # Perform PCA dimensionality reduction
+    pca = PCA(n_components=2, random_state=random_state)
+    pca_results = pca.fit_transform(data)
+
+    # Create a DataFrame for the PCA results
+    pca_df = pd.DataFrame(pca_results, columns=['PCA1', 'PCA2'])
+    pca_df['cluster_label'] = cluster_labels
+
+    # Plot the clusters
+    plt.figure(figsize=(10, 8))
+    for cluster in range(n_clusters):
+        cluster_data = pca_df[pca_df['cluster_label'] == cluster]
+        plt.scatter(cluster_data['PCA1'], cluster_data['PCA2'], label=f'Cluster {cluster}', alpha=0.6)
+
+    # Highlight outliers if available
+    if 'is_outlier' in data.columns:
+        outliers = pca_df[data['is_outlier']]
+        plt.scatter(outliers['PCA1'], outliers['PCA2'], color='red', marker='x', s=100, label='Outliers')
+
+    # Add labels and legend
+    plt.title('2D Cluster Visualization using PCA')
+    plt.xlabel('PCA Component 1')
+    plt.ylabel('PCA Component 2')
+    plt.legend()
+    plt.grid()
+    plt.show()
+
 # Main Execution
 data = feature_engineering(data)
 
@@ -93,7 +146,13 @@ scaled_time_series = normalize_time_series(data, time_series_cols)
 # Clustering
 n_clusters = 10
 kmeans, cluster_labels = perform_clustering(scaled_time_series, n_clusters)
+
+# Merge small clusters
+cluster_labels = merge_small_clusters(data, cluster_labels, min_cluster_size=5)
 data['cluster_label'] = cluster_labels
+
+# Update the number of clusters after merging
+n_clusters = len(np.unique(cluster_labels))
 
 # Regression Features
 features = time_series_cols + ['moving_avg_3', 'moving_avg_6', 'trend_slope'] + [f'lag_diff_{i}' for i in range(1, 11)] + ['cluster_label']
@@ -133,3 +192,4 @@ print("Outliers with clusters saved to 'outliers_with_clusters.csv'.")
 
 # Plot Results by Cluster
 plot_time_series_by_cluster_single_canvas(data, kmeans.cluster_centers_, time_series_cols, n_clusters)
+plot_clusters_in_2d(data, cluster_labels, n_clusters)

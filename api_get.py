@@ -43,13 +43,5 @@ def upload_file():
             "download_url": f"/download/{output_filename}"
         })
 
-@app.route('/download/<filename>', methods=['GET'])
-def download_file(filename):
-    filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-    if os.path.exists(filepath):
-        return send_file(filepath, as_attachment=True)
-    else:
-        return jsonify({"error": "File not found"}), 404
-
 if __name__ == '__main__':
     app.run(debug=True)
