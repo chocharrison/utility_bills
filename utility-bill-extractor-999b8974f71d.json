@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "utility-bill-extractor",
+  "private_key_id": "999b8974f71d86da69209ce5db911539029c5f73",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC72dCgR0Jwp3e/\nYgSNKJ9eIN9CEOhaI7HNJzymDG+U9WCkXEChnCDO0a9EwVL8Zn+MaCrDeLI8MFPF\nC4rNsBGAjmmjS7hsccLRyo5z/YJenzy5hb9lEnPsjkv12q8j6jIxwn8hKrbvabER\nVvSOx1dNg7KwIZ/vLha4chyFdlfrQLM0RyDzqAAzJJCl4et6g/mgPI7cDCh0Xedv\nQdUD1/dF/RwuPOefH+G2grYBPE+T8IiYI+aPEioQgi9lWnjUcxMW1j8qlrIlFCF6\nT8cZXlnNN6sl2XxIgf9xKMMQ5ktfhWvHQ63Apdj5i0zOT6R2oztGOtpDzHZsoTNy\n0Ub/R0xxAgMBAAECggEARDFjIfwca2bv+qLrgg7gI7yNL5+Rqb9ReWcoBiN3kjyt\nk50FvWU/J7VJCg2gQY43+VGLTKCRG3ZzwpFZFyg2glOwl54SWhPGJICCzCqYXB80\nXSjnfRqAyLwzaRG1CLWo+RVhLzohZLIanG/Toc1NrQ8FHBloxNwXVWffYLfAXN7l\nslg77yqxt24gbBSXuVp3v1b7e7VY6gbjAz2n6mRx1Qf/g7AKTGA5mxLTr2Pv4yNR\ninsaguK+KH5GbOn0b7v85SCOtrZOGy8DYggFjlEDOv2uTDrtCCArSBVDJABdEueL\nZ4VCrrytF1uQ015CL5wfJnpuGrk7IWFrYUjuJuHhzQKBgQDe3Ke8GaunnKidZ86Y\nfR/+FYV+NdTphnBIZDZQyc/Kt8kVVZrRIRy+jpPBNtI42Liwhlh3val+9R66dsXU\noK9+Km6Cn4ypDCYxsoznM0SuHTr6Ri4+79tYYn+HYHqNtDI+fcvKwUBXY9cMh/mO\n+GG9R2BR/Q+ZcGhKSQ3wl5edewKBgQDXyHIkwifO9ho/YXHVqhIo3dpGXk5aNrPm\n9s7sVS/uYz/pPLAZF34YppFM7/Nd20gmQavfb6iube05AWK7JYuDb8YTCvgUFBYD\nT1ZqHLa74bu0t1Nr4mRwiuI6eyxRhk11tt9jdzsct3lNxNsWQjLqGTiX3c9MHJ2p\nqJpbeaUcAwKBgCWxE/1QKiPy7uGQSPSpVNvYL/ekixnjzuGvcTBAsZALfUrKa6Cr\nBP2Fh5/J8cwDe1j/n77AqQX71vKaW+MWOhgQfRhCe7urfloxZHtFxHveHbduXyvt\nzR8pqX/v5UpKC6VeCTWFcahWDmzkImT3xTAJ/lRfhF/jDwBhUqY6PT45AoGAE5jg\nxPXdJ66yM49mB0Gq5ItBh6KI+yh8rj08Dbqu37ej1krss1qu2Q5Ho/Um5R9FLjRI\np8I8T5ssMEEv9k8ynH1KP/B/F1O7rBFIh9qTvfyCT6dWrDWjaZUzdpw5Ki5IWqiB\nIUdy1ujS231FaIAan6gqu6Apc4Al0YK+ghBKLoECgYEAoYWTGaZTQWWJVJmzvYIz\nVelNoTYkFjB1l00boIHsrzscuuS4dKjrEKOy70H11CH7FpyuOjcNqEUt/sNGke1G\nD/8TlFl9TwLBCEddNJ4D46EH11qPhgM1fXIPEaP8dj3sl+KtkPA6MTW7c4QOfAQz\nWx3JAhWGctVV+9YkSmybILs=\n-----END PRIVATE KEY-----\n",
+  "client_email": "utility@utility-bill-extractor.iam.gserviceaccount.com",
+  "client_id": "108220897279603998857",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/utility%40utility-bill-extractor.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

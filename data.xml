@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<invextract date="20190122">
+    <invdoc InvType="utility" ContractAccount="000001637521" InvoiceNumber="074001004677" CustomerNumber="0000063752">
+        <CustomerInformation>
+            <DisplayName>LEPORE, PETER</DisplayName>
+            <LastName>LEPORE</LastName>
+            <FirstName>PETER</FirstName>
+            <MailingAddress>
+                <addr1>138 PARKS EDGE CRES</addr1>
+                <addr2>LONDON ON  N6K 3P7</addr2>
+                <addr3/>
+                <City>LONDON</City>
+                <Province>ON</Province>
+                <country>CANADA</country>
+                <postal_code>N6K 3P7</postal_code>
+                <Walk_sequence>100-1370</Walk_sequence>
+            </MailingAddress>
+            <Email>peterl1248@hotmail.com</Email>
+            <VacantOwner>N</VacantOwner>
+        </CustomerInformation>
+        <InvSummary>
+            <SummaryItem>
+                <Display>Billing Date</Display>
+                <Value type="date">20190122</Value>
+                <GroupOrder>header</GroupOrder>
+                <SortOrder>1</SortOrder>
+            </SummaryItem>
+            <SummaryItem>
+                <Display>Application Form</Display>
+                <Value type="alpha">Z_IS_U_BI_BILL_NORMAL2</Value>
+                <GroupOrder>header</GroupOrder>
+                <SortOrder>2</SortOrder>
+            </SummaryItem>
+            <SummaryItem>
+                <Display>Audit Key</Display>
+                <Value type="alpha">ERES-ERES_RPP-W&amp;S_RESI</Value>
+                <GroupOrder>header</GroupOrder>
+                <SortOrder>3</SortOrder>
+            </SummaryItem>
+            <SummaryItem>
+                <Display>Audit Flag</Display>
+                <Value type="alpha"/>
+                <GroupOrder>header</GroupOrder>
+                <SortOrder>4</SortOrder>
+            </SummaryItem>
+            <SummaryItem>
+                <Display>Total Amount Due</Display>
+                <Value type="numeric">209.10 </Value>
+                <GroupOrder>header</GroupOrder>
+                <SortOrder>5</SortOrder>
+            </SummaryItem>
+            <SummaryItem>
+                <Display>Due Date</Display>
+                <Value type="date">20190207</Value>
+                <GroupOrder>header</GroupOrder>
+                <SortOrder>6</SortOrder>
+            </SummaryItem>
+            <SummaryItem>
+                <Display>Payment Enclosed</Display>
+                <Value type="alpha"/>
+                <GroupOrder>header</GroupOrder>
+                <SortOrder>7</SortOrder>
+            </SummaryItem>
+            <SummaryItem>
+                <Display>Previous Balance</Display>
+                <Value type="numeric">169.46 </Value>
+                <GroupOrder>summary</GroupOrder>
+                <SortOrder>1</SortOrder>
+            </SummaryItem>
+            <SummaryItem>
+                <Display>Total Payment since last bill</Display>
+                <Value type="numeric">-169.46</Value>
+                <GroupOrder>summary</GroupOrder>
+                <SortOrder>2</SortOrder>
+            </SummaryItem>
+            <SummaryItem>
+                <Display>Balance Forward</Display>
+                <Value type="numeric">0.00 </Value>
+                <GroupOrder>summary</GroupOrder>
+                <SortOrder>3</SortOrder>
+            </SummaryItem>
+            <SummaryItem>
+                <Display>Total Current Utility Charges</Display>
+                <Value type="numeric">209.10 </Value>
+                <GroupOrder>summary</GroupOrder>
+                <SortOrder>4</SortOrder>
+            </SummaryItem>
+            <SummaryItem>
+                <Display>~(Total HST $13.42 )</Display>
+                <Value type="alpha"/>
+                <GroupOrder>summary</GroupOrder>
+                <SortOrder>5</SortOrder>
+            </SummaryItem>
+            <SummaryItem>
+                <Display>Total Amount Due</Display>
+                <Value type="numeric">209.10 </Value>
+                <GroupOrder>summary</GroupOrder>
+                <SortOrder>6</SortOrder>
+            </SummaryItem>
+            <OCR>000000163752110000209101000020910201902076</OCR>
+            <OMRIncludeReturnEnvelope>N</OMRIncludeReturnEnvelope>
+            <SuppressMailing>N</SuppressMailing>
+            <InterestRate>1.5</InterestRate>
+            <MailMethod>electronic</MailMethod>
+        </InvSummary>
+        <InvDetails>
+            <Service type="electric" Premise="138 PARKS EDGE CRES">
+                <InstallationNumber>0000039926</InstallationNumber>
+                <AccountNumber>39926-1637521</AccountNumber>
+                <UnitsServed>1</UnitsServed>
+                <RateDescription>Residential Supply: SSS / RPPElectricity - Residential Distribution</RateDescription>
+                <TotalCharges>
+                    <ChargeLine>
+                        <Display>Total Electric Charges</Display>
+                        <Value type="numeric">108.36 </Value>
+                        <GroupOrder>detailsum</GroupOrder>
+                        <SortOrder>0</SortOrder>
+                    </ChargeLine>
+                </TotalCharges>
+                <DetailCharges>
+                    <ChargeLine>
+                        <Display>Electricity supplied by London Hydro</Display>
+                        <Value type="numeric"/>
+                        <GroupOrder>detail</GroupOrder>
+                        <SortOrder>1</SortOrder>
+                    </ChargeLine>
+                    <ChargeLine>
+                        <Display>~On-Peak 117.50 kWh x $0.132/kWh</Display>
+                        <Value type="numeric">15.51 </Value>
+                        <UnitCost>0.132</UnitCost>
+                        <GroupOrder>detail</GroupOrder>
+                        <SortOrder>12</SortOrder>
+                    </ChargeLine>
+                    <ChargeLine>
+                        <Display>~Mid-Peak 107.96 kWh x $0.094/kWh</Display>
+                        <Value type="numeric">10.15 </Value>
+                        <UnitCost>0.094</UnitCost>
+                        <GroupOrder>detail</GroupOrder>
+                        <SortOrder>13</SortOrder>
+                    </ChargeLine>
+                    <ChargeLine>
+                        <Display>~Off-Peak 551.70 kWh x $0.065/kWh</Display>
+                        <Value type="numeric">35.86 </Value>
+                        <UnitCost>0.065</UnitCost>
+                        <GroupOrder>detail</GroupOrder>
+                        <SortOrder>14</SortOrder>
+                    </ChargeLine>
+                    <ChargeLine>
+                        <Display>Delivery</Display>
+                        <Value type="numeric">38.30 </Value>
+                        <GroupOrder>detail</GroupOrder>
+                        <SortOrder>55</SortOrder>
+                    </ChargeLine>
+                    <ChargeLine>
+                        <Display>Regulatory Charges</Display>
+                        <Value type="numeric">3.38 </Value>
+                        <GroupOrder>detail</GroupOrder>
+                        <SortOrder>75</SortOrder>
+                    </ChargeLine>
+                    <ChargeLine>
+                        <Display>HST (#86483 7430)</Display>
+                        <Value type="numeric">13.42 </Value>
+                        <GroupOrder>detail</GroupOrder>
+                        <SortOrder>115</SortOrder>
+                    </ChargeLine>
+                    <ChargeLine>
+                        <Display>Subtotal of Electric Charges</Display>
+                        <Value type="numeric">116.62 </Value>
+                        <GroupOrder>detail</GroupOrder>
+                        <SortOrder>117</SortOrder>
+                    </ChargeLine>
+                    <ChargeLine>
+                        <Display>8% Provincial Rebate</Display>
+                        <Value type="numeric">-8.26</Value>
+                        <GroupOrder>detail</GroupOrder>
+                        <SortOrder>119</SortOrder>
+                    </ChargeLine>
+                </DetailCharges>
+                <MeterData>
+                    <Meter MeterNumber="334995" type="R">
+                        <Register type="kWh" multiplier="1">
+                            <FromUsage date="20181206" type="A">107394.060 </FromUsage>
+                            <ToUsage date="20190104" type="A">108171.220 </ToUsage>
+                            <AdjustmentFactor>1.0315</AdjustmentFactor>
+                            <ActualUsage>        777.16</ActualUsage>
+                            <AdjustedUsage>        801.64</AdjustedUsage>
+                            <PrimaryAdjustmentFactor>1.0</PrimaryAdjustmentFactor>
+                        </Register>
+                    </Meter>
+                </MeterData>
+                <UsageHistory>
+                    <Usage date="20190104" type="A" MeasureUnits="kWh" Consumption="777.1600000 ">
+                        <Tou Peak="on" Consumption="117.5000000 "/>
+                        <Tou Peak="mid" Consumption="107.9600000 "/>
+                        <Tou Peak="off" Consumption="551.7000000 "/>
+                    </Usage>
+                    <Usage date="20181205" type="A" MeasureUnits="kWh" Consumption="613.7600000 ">
+                        <Tou Peak="on" Consumption="117.0900000 "/>
+                        <Tou Peak="mid" Consumption="87.2300000 "/>
+                        <Tou Peak="off" Consumption="409.4400000 "/>
+                    </Usage>
+                    <Usage date="20181105" type="A" MeasureUnits="kWh" Consumption="724.2400000 ">
+                        <Tou Peak="on" Consumption="86.4700000 "/>
+                        <Tou Peak="mid" Consumption="108.2800000 "/>
+                        <Tou Peak="off" Consumption="529.4900000 "/>
+                    </Usage>
+                    <Usage date="20181005" type="A" MeasureUnits="kWh" Consumption="1028.0900000 ">
+                        <Tou Peak="on" Consumption="199.3200000 "/>
+                        <Tou Peak="mid" Consumption="186.9600000 "/>
+                        <Tou Peak="off" Consumption="641.8100000 "/>
+                    </Usage>
+                    <Usage date="20180905" type="A" MeasureUnits="kWh" Consumption="1522.0000000 ">
+                        <Tou Peak="mid" Consumption="325.7700000 "/>
+                        <Tou Peak="off" Consumption="838.4500000 "/>
+                        <Tou Peak="on" Consumption="357.7800000 "/>
+                    </Usage>
+                    <Usage date="20180803" type="A" MeasureUnits="kWh" Consumption="1333.4600000 ">
+                        <Tou Peak="off" Consumption="610.4800000 "/>
+                        <Tou Peak="mid" Consumption="342.7200000 "/>
+                        <Tou Peak="on" Consumption="380.2600000 "/>
+                    </Usage>
+                    <Usage date="20180705" type="A" MeasureUnits="kWh" Consumption="1279.2000000 ">
+                        <Tou Peak="off" Consumption="819.1200000 "/>
+                        <Tou Peak="mid" Consumption="262.4400000 "/>
+                        <Tou Peak="on" Consumption="197.6400000 "/>
+                    </Usage>
+                    <Usage date="20180605" type="A" MeasureUnits="kWh" Consumption="1060.7400000 ">
+                        <Tou Peak="off" Consumption="654.7800000 "/>
+                        <Tou Peak="on" Consumption="190.8700000 "/>
+                        <Tou Peak="mid" Consumption="215.0900000 "/>
+                    </Usage>
+                    <Usage date="20180504" type="A" MeasureUnits="kWh" Consumption="513.2900000 ">
+                        <Tou Peak="off" Consumption="347.2200000 "/>
+                        <Tou Peak="on" Consumption="86.1900000 "/>
+                        <Tou Peak="mid" Consumption="79.8800000 "/>
+                    </Usage>
+                    <Usage date="20180405" type="A" MeasureUnits="kWh" Consumption="607.7700000 ">
+                        <Tou Peak="on" Consumption="104.1900000 "/>
+                        <Tou Peak="mid" Consumption="95.5300000 "/>
+                        <Tou Peak="off" Consumption="408.0500000 "/>
+                    </Usage>
+                    <Usage date="20180305" type="A" MeasureUnits="kWh" Consumption="573.0600000 ">
+                        <Tou Peak="mid" Consumption="87.7100000 "/>
+                        <Tou Peak="off" Consumption="383.3600000 "/>
+                        <Tou Peak="on" Consumption="101.9900000 "/>
+                    </Usage>
+                    <Usage date="20180205" type="A" MeasureUnits="kWh" Consumption="677.5600000 ">
+                        <Tou Peak="off" Consumption="473.0100000 "/>
+                        <Tou Peak="on" Consumption="111.5800000 "/>
+                        <Tou Peak="mid" Consumption="92.9700000 "/>
+                    </Usage>
+                    <Usage date="20180105" type="A" MeasureUnits="kWh" Consumption="855.6100000 ">
+                        <Tou Peak="off" Consumption="640.4580000 "/>
+                        <Tou Peak="on" Consumption="118.8220000 "/>
+                        <Tou Peak="mid" Consumption="96.3300000 "/>
+                    </Usage>
+                    <Usage date="20171104" type="A" MeasureUnits="kWh" Consumption="855.6100000 ">
+                        <Tou Peak="off" Consumption="640.4580000 "/>
+                        <Tou Peak="on" Consumption="118.8220000 "/>
+                        <Tou Peak="mid" Consumption="96.3300000 "/>
+                    </Usage>
+                </UsageHistory>
+                <Message>
+                    <Display>Ontario&apos;s Fair Hydro Plan saved you $#1# on your bill. This includes the 8% Provincial Rebate.</Display>
+                    <GroupOrder>electric</GroupOrder>
+                    <SortOrder>1</SortOrder>
+                    <MessageType>alert</MessageType>
+                    <MessageVar1>                                            49.62</MessageVar1>
+                </Message>
+            </Service>
+            <Service type="water" Premise="138 PARKS EDGE CRES">
+                <InstallationNumber>0000039927</InstallationNumber>
+                <UnitsServed>1</UnitsServed>
+                <RateDescription>Water, Sewer &amp; Storm water Residential</RateDescription>
+                <TotalCharges>
+                    <ChargeLine>
+                        <Display>Total Water Utilities Charges</Display>
+                        <Value type="numeric">100.74 </Value>
+                        <GroupOrder>detailsum</GroupOrder>
+                        <SortOrder>0</SortOrder>
+                    </ChargeLine>
+                </TotalCharges>
+                <DetailCharges>
+                    <ChargeLine>
+                        <Display>These services are provided by the City of London</Display>
+                        <Value type="numeric"/>
+                        <GroupOrder>detail</GroupOrder>
+                        <SortOrder>1</SortOrder>
+                    </ChargeLine>
+                    <ChargeLine>
+                        <Display>Water Usage Charges for 19.00 m³</Display>
+                        <Value type="numeric">28.87 </Value>
+                        <GroupOrder>detail</GroupOrder>
+                        <SortOrder>11</SortOrder>
+                    </ChargeLine>
+                    <ChargeLine>
+                        <Display>Wastewater Usage Charges for 19.00 m³</Display>
+                        <Value type="numeric">25.65 </Value>
+                        <GroupOrder>detail</GroupOrder>
+                        <SortOrder>14</SortOrder>
+                    </ChargeLine>
+                    <ChargeLine>
+                        <Display>Infrastructure Connection Charges</Display>
+                        <Value type="numeric">46.22 </Value>
+                        <GroupOrder>detail</GroupOrder>
+                        <SortOrder>33</SortOrder>
+                    </ChargeLine>
+                </DetailCharges>
+                <MeterData>
+                    <Meter MeterNumber="301185" type="POS">
+                        <Register type="m³" multiplier="1">
+                            <FromUsage date="20181206" type="A">333.000 </FromUsage>
+                            <ToUsage date="20190104" type="A">352.000 </ToUsage>
+                            <AdjustmentFactor>1.0</AdjustmentFactor>
+                            <ActualUsage>         19.00</ActualUsage>
+                            <AdjustedUsage>         19.00</AdjustedUsage>
+                        </Register>
+                    </Meter>
+                </MeterData>
+                <UsageHistory>
+                    <Usage date="20190104" type="E" MeasureUnits="m³" Consumption="19.0000000 "/>
+                    <Usage date="20181205" type="A" MeasureUnits="m³" Consumption="15.0000000 "/>
+                    <Usage date="20181105" type="A" MeasureUnits="m³" Consumption="19.0000000 "/>
+                    <Usage date="20181003" type="A" MeasureUnits="m³" Consumption="19.0000000 "/>
+                    <Usage date="20180904" type="A" MeasureUnits="m³" Consumption="19.0000000 "/>
+                    <Usage date="20180731" type="A" MeasureUnits="m³" Consumption="24.0000000 "/>
+                    <Usage date="20180703" type="A" MeasureUnits="m³" Consumption="23.0000000 "/>
+                    <Usage date="20180605" type="A" MeasureUnits="m³" Consumption="28.0000000 "/>
+                    <Usage date="20180503" type="A" MeasureUnits="m³" Consumption="22.0000000 "/>
+                    <Usage date="20180406" type="A" MeasureUnits="m³" Consumption="18.0000000 "/>
+                    <Usage date="20180303" type="A" MeasureUnits="m³" Consumption="18.0000000 "/>
+                    <Usage date="20180202" type="A" MeasureUnits="m³" Consumption="17.0000000 "/>
+                    <Usage date="20180103" type="E" MeasureUnits="m³" Consumption="20.0000000 "/>
+                    <Usage date="20171102" type="E" MeasureUnits="m³" Consumption="20.0000000 "/>
+                </UsageHistory>
+            </Service>
+        </InvDetails>
+    </invdoc>
+</invextract><!-- end of record -->
